@@ -13,6 +13,8 @@
 		6F53BE591C6CF5170009CD40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F53BE571C6CF5170009CD40 /* Main.storyboard */; };
 		6F53BE5B1C6CF5170009CD40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F53BE5A1C6CF5170009CD40 /* Assets.xcassets */; };
 		6F53BE5E1C6CF5170009CD40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F53BE5C1C6CF5170009CD40 /* LaunchScreen.storyboard */; };
+		6F53BE661C6CF61E0009CD40 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6F53BE651C6CF61E0009CD40 /* Podfile */; };
+		6F53BE681C6CF6210009CD40 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 6F53BE671C6CF6210009CD40 /* Podfile.lock */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		6F53BE5A1C6CF5170009CD40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F53BE5D1C6CF5170009CD40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F53BE5F1C6CF5170009CD40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F53BE651C6CF61E0009CD40 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		6F53BE671C6CF6210009CD40 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = SOURCE_ROOT; };
 		ADC09F765E4D9550716084F3 /* Pods_DoubleClickSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoubleClickSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9227DB8A832FDB61A1DAF64 /* Pods-DoubleClickSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoubleClickSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoubleClickSwift/Pods-DoubleClickSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +80,8 @@
 				6F53BE5A1C6CF5170009CD40 /* Assets.xcassets */,
 				6F53BE5C1C6CF5170009CD40 /* LaunchScreen.storyboard */,
 				6F53BE5F1C6CF5170009CD40 /* Info.plist */,
+				6F53BE651C6CF61E0009CD40 /* Podfile */,
+				6F53BE671C6CF6210009CD40 /* Podfile.lock */,
 			);
 			path = DoubleClickSwift;
 			sourceTree = "<group>";
@@ -151,6 +157,8 @@
 			files = (
 				6F53BE5E1C6CF5170009CD40 /* LaunchScreen.storyboard in Resources */,
 				6F53BE5B1C6CF5170009CD40 /* Assets.xcassets in Resources */,
+				6F53BE681C6CF6210009CD40 /* Podfile.lock in Resources */,
+				6F53BE661C6CF61E0009CD40 /* Podfile in Resources */,
 				6F53BE591C6CF5170009CD40 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
