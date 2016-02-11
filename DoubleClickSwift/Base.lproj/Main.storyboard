@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="mpE-SY-pXk">
             <objects>
-                <viewController id="GGO-E3-NBe" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="GGO-E3-NBe" customClass="ViewController" customModule="DoubleClickSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Aff-m2-t1C"/>
                         <viewControllerLayoutGuide type="bottom" id="plt-VX-tE6"/>
