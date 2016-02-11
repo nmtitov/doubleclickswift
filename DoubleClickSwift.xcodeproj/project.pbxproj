@@ -13,6 +13,8 @@
 		6F53BE5B1C6CF5170009CD40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F53BE5A1C6CF5170009CD40 /* Assets.xcassets */; };
 		6F53BE5E1C6CF5170009CD40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F53BE5C1C6CF5170009CD40 /* LaunchScreen.storyboard */; };
 		6F53BE6A1C6CF6540009CD40 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6F53BE691C6CF6540009CD40 /* README.md */; };
+		6F53BE6C1C6D085B0009CD40 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F53BE6B1C6D085B0009CD40 /* ReactiveCocoa.framework */; };
+		6F53BE6E1C6D085D0009CD40 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F53BE6D1C6D085D0009CD40 /* Result.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		6F53BE5D1C6CF5170009CD40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F53BE5F1C6CF5170009CD40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F53BE691C6CF6540009CD40 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		6F53BE6B1C6D085B0009CD40 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		6F53BE6D1C6D085D0009CD40 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F53BE6C1C6D085B0009CD40 /* ReactiveCocoa.framework in Frameworks */,
+				6F53BE6E1C6D085D0009CD40 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +77,8 @@
 		C7BD940CDAC1907122D895B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6F53BE6D1C6D085D0009CD40 /* Result.framework */,
+				6F53BE6B1C6D085B0009CD40 /* ReactiveCocoa.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -85,6 +93,7 @@
 				6F53BE4C1C6CF5170009CD40 /* Sources */,
 				6F53BE4D1C6CF5170009CD40 /* Frameworks */,
 				6F53BE4E1C6CF5170009CD40 /* Resources */,
+				6F53BE6F1C6D086E0009CD40 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -140,6 +149,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F53BE6F1C6D086E0009CD40 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6F53BE4C1C6CF5170009CD40 /* Sources */ = {
@@ -259,6 +286,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DoubleClickSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nmtitov.DoubleClickSwift;
@@ -270,6 +301,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = DoubleClickSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nmtitov.DoubleClickSwift;
