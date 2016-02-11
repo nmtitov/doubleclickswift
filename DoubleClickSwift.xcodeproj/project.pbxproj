@@ -15,6 +15,7 @@
 		6F53BE5E1C6CF5170009CD40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F53BE5C1C6CF5170009CD40 /* LaunchScreen.storyboard */; };
 		6F53BE661C6CF61E0009CD40 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 6F53BE651C6CF61E0009CD40 /* Podfile */; };
 		6F53BE681C6CF6210009CD40 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 6F53BE671C6CF6210009CD40 /* Podfile.lock */; };
+		6F53BE6A1C6CF6540009CD40 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6F53BE691C6CF6540009CD40 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		6F53BE5F1C6CF5170009CD40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F53BE651C6CF61E0009CD40 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		6F53BE671C6CF6210009CD40 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = SOURCE_ROOT; };
+		6F53BE691C6CF6540009CD40 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		ADC09F765E4D9550716084F3 /* Pods_DoubleClickSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoubleClickSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9227DB8A832FDB61A1DAF64 /* Pods-DoubleClickSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoubleClickSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoubleClickSwift/Pods-DoubleClickSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 				6F53BE5F1C6CF5170009CD40 /* Info.plist */,
 				6F53BE651C6CF61E0009CD40 /* Podfile */,
 				6F53BE671C6CF6210009CD40 /* Podfile.lock */,
+				6F53BE691C6CF6540009CD40 /* README.md */,
 			);
 			path = DoubleClickSwift;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F53BE6A1C6CF6540009CD40 /* README.md in Sources */,
 				6F53BE561C6CF5170009CD40 /* ViewController.swift in Sources */,
 				6F53BE541C6CF5170009CD40 /* AppDelegate.swift in Sources */,
 			);
