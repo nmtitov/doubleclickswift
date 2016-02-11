@@ -1,25 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="GGO-E3-NBe">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="mpE-SY-pXk">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DoubleClickSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GGO-E3-NBe" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Aff-m2-t1C"/>
+                        <viewControllerLayoutGuide type="bottom" id="plt-VX-tE6"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="YzG-TL-Evw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXR-XJ-3tk">
+                                <rect key="frame" x="15" y="225" width="290" height="30"/>
+                                <state key="normal" title="Click me"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clicks: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMb-jK-QTf">
+                                <rect key="frame" x="15" y="196" width="290" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cXR-XJ-3tk" firstAttribute="centerY" secondItem="YzG-TL-Evw" secondAttribute="centerY" id="KQ3-IZ-Acw"/>
+                            <constraint firstItem="YMb-jK-QTf" firstAttribute="leading" secondItem="YzG-TL-Evw" secondAttribute="leading" constant="15" id="OGV-Lw-sew"/>
+                            <constraint firstItem="YMb-jK-QTf" firstAttribute="centerX" secondItem="cXR-XJ-3tk" secondAttribute="centerX" id="Olk-y7-U3C"/>
+                            <constraint firstAttribute="trailing" secondItem="cXR-XJ-3tk" secondAttribute="trailing" constant="15" id="Xhn-Fu-S9s"/>
+                            <constraint firstItem="YMb-jK-QTf" firstAttribute="centerX" secondItem="YzG-TL-Evw" secondAttribute="centerX" id="ZUr-J5-4MQ"/>
+                            <constraint firstAttribute="trailing" secondItem="YMb-jK-QTf" secondAttribute="trailing" constant="15" id="c1s-UD-7Ss"/>
+                            <constraint firstItem="cXR-XJ-3tk" firstAttribute="top" secondItem="YMb-jK-QTf" secondAttribute="bottom" constant="8" id="ibs-CM-wY4"/>
+                            <constraint firstItem="cXR-XJ-3tk" firstAttribute="centerX" secondItem="YzG-TL-Evw" secondAttribute="centerX" id="ytf-Br-MXl"/>
+                            <constraint firstItem="cXR-XJ-3tk" firstAttribute="leading" secondItem="YzG-TL-Evw" secondAttribute="leading" constant="15" id="z35-8W-yU7"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
+                    <connections>
+                        <outlet property="button" destination="cXR-XJ-3tk" id="hgc-xs-i4M"/>
+                        <outlet property="label" destination="YMb-jK-QTf" id="N8d-65-ftS"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="crn-x8-9Yl" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
