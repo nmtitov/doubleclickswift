@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         let touch = button.rac_signalForControlEvents(.TouchUpInside).toSignalProducer().flatMapError { _ in SignalProducer<AnyObject?, NoError>.empty }
 
         let delay = touch.flatMap(.Latest, transform: { next in
