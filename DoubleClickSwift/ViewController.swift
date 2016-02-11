@@ -8,6 +8,7 @@
 
 import UIKit
 import ReactiveCocoa
+import Result
 
 class ViewController: UIViewController {
 
@@ -18,19 +19,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let touch = button.rac_signalForControlEvents(.TouchUpInside)
-        let touches = touch.takeUntil(touch.throttle(0.25)).collect().map({ $0.count }).`repeat`()
+        let touch = button.rac_signalForControlEvents(.TouchUpInside).toSignalProducer().flatMapError { _ in SignalProducer<AnyObject?, NoError>.empty }
+        let throttle = touch.throttle(0.25, onScheduler: QueueScheduler.mainQueueScheduler).map { _ in () }
+        let touches = touch.takeUntil(throttle).collect().times(Int.max).map { $0.count }
         
-        let click = touches.filter { $0 as! Int == 1 }.mapReplace("Click")
-        let clicks = touches.filter { $0 as! Int >= 2 }.map { "Clicks: \($0)" }
-        let clear = touches.throttle(1).mapReplace("")
+        let click = touches.filter { $0 == 1 }.map { _ in "Click" }
+        let clicks = touches.filter { $0 >= 2 }.map { "Clicks: \($0)" }
+        let clear = touches.throttle(1, onScheduler: QueueScheduler.mainQueueScheduler).map { _ in "" }
+        let text = SignalProducer(values: [click, clicks, clear]).flatten(.Merge)
         
-        let all = RACSignal.merge([click, clicks, clear])
-        
-        all.subscribeNext { (next: AnyObject!) -> Void in
-            self.label.text = next as! String
-        }
-
+        DynamicProperty(object: label, keyPath: "text") <~ text.map { $0 }
     }
 
 
