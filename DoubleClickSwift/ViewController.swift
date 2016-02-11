@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         
         let click = touches.filter { $0 as! Int == 1 }.mapReplace("Click")
         let clicks = touches.filter { $0 as! Int >= 2 }.map { "Clicks: \($0)" }
-        let clear = RACSignal.merge([click, clicks]).throttle(1).mapReplace("")
+        let clear = touches.throttle(1).mapReplace("")
         
         let all = RACSignal.merge([click, clicks, clear])
         
