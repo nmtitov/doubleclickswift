@@ -12,8 +12,7 @@ import Result
 
 public extension SignalProducerType {
     @warn_unused_result
-    public func debounce(interval: NSTimeInterval, onScheduler scheduler: DateSchedulerType) -> SignalProducer<Value, Error>
-    {
+    public func debounce(interval: NSTimeInterval, onScheduler scheduler: DateSchedulerType) -> SignalProducer<Value, Error> {
         return flatMap(.Latest, transform: { next in
             SignalProducer(value: next).delay(interval, onScheduler: scheduler)
         })
@@ -22,11 +21,18 @@ public extension SignalProducerType {
 
 public extension SignalProducerType {
     @warn_unused_result
-    public func debounce(interval: NSTimeInterval) -> SignalProducer<Value, Error>
-    {
+    public func debounce(interval: NSTimeInterval) -> SignalProducer<Value, Error> {
         return flatMap(.Latest, transform: { next in
             SignalProducer(value: next).delay(interval, onScheduler: QueueScheduler.mainQueueScheduler)
         })
+    }
+}
+
+
+public extension SignalProducerType {
+    @warn_unused_result
+    public func `repeat`() -> SignalProducer<Value, Error> {
+        return times(Int.max)
     }
 }
 
@@ -42,7 +48,7 @@ class ViewController: UIViewController {
         
         let delay = touch.debounce(0.25).map { _ in () }
         
-        let touches = touch.takeUntil(delay).collect().times(Int.max).map { $0.count }
+        let touches = touch.takeUntil(delay).collect().`repeat`().map { $0.count }
         
         let click = touches.filter { $0 == 1 }.map { _ in "Click" }
         let clicks = touches.filter { $0 >= 2 }.map { "Clicks: \($0)" }
