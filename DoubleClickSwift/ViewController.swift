@@ -17,19 +17,14 @@ public extension SignalProducerType {
             SignalProducer(value: next).delay(interval, onScheduler: scheduler)
         })
     }
-}
-
-public extension SignalProducerType {
+    
     @warn_unused_result
     public func debounce(interval: NSTimeInterval) -> SignalProducer<Value, Error> {
         return flatMap(.Latest, transform: { next in
             SignalProducer(value: next).delay(interval, onScheduler: QueueScheduler.mainQueueScheduler)
         })
     }
-}
-
-
-public extension SignalProducerType {
+    
     @warn_unused_result
     public func `repeat`() -> SignalProducer<Value, Error> {
         return times(Int.max)
