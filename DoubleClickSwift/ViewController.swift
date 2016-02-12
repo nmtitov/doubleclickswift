@@ -40,10 +40,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let touch = button.rac_signalForControlEvents(.TouchUpInside).toSignalProducer().flatMapError { _ in SignalProducer<AnyObject?, NoError>.empty }
-        
-        let delay = touch.debounce(0.25).map { _ in () }
-        
-        let touches = touch.takeUntil(delay).collect().`repeat`().map { $0.count }
+        let touches = touch.takeUntil(touch.debounce(0.25).map { _ in () }).collect().`repeat`().map { $0.count }
         
         let click = touches.filter { $0 == 1 }.map { _ in "Click" }
         let clicks = touches.filter { $0 >= 2 }.map { "Clicks: \($0)" }
