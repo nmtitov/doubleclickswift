@@ -44,7 +44,6 @@ class ViewController: UIViewController {
         
         let click = touches.filter { $0 == 1 }.map { _ in "Click" }
         let clicks = touches.filter { $0 >= 2 }.map { "Clicks: \($0)" }
-        
         let clear = touches.debounce(1).map { _ in "" }
         
         let text = SignalProducer(values: [click, clicks, clear]).flatten(.Merge)
